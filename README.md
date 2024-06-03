@@ -70,6 +70,3 @@ Approve/Reject Leave: Admins can view leave applications and approve or reject t
 ![Screenshot 2024-06-03 165525](https://github.com/DevHarsh2003/Faculty_Work_Schedule_Management_System/assets/111884027/d799b850-5100-44a3-ad66-cd7440812c14)
 
 
-**Contact**
-
-For any questions or support, please contact devharsh.2003@gmail.com.
