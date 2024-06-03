@@ -6,19 +6,19 @@ This project is a web application built using Node.js and MySQL that allows facu
 
 **Features**
 
-Faculty Interface:
+_**Faculty Interface:**_
 
 View work schedules.
 
 Apply for leave.
 
-Admin Interface:
+_**Admin Interface:**_
 
 Modify faculty timetables.
 
 Approve or reject leave applications.
 
-Technologies Used
+_**Technologies Used**_
 
 Node.js
 
