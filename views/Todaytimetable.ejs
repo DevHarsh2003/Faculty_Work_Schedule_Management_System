@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Timetable Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <script src="https://kit.fontawesome.com/de38eb546a.js" crossorigin="anonymous"></script>
+    </head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      .btn{
+    background-color: rgb(36, 36, 129);
+    color: aliceblue;
+    font-size: 0.9rem;
+    margin-left:0rem;
+    margin-right:1.2rem;
+    margin-top: 0.9rem;
+    width:12rem;
+  } 
+      #nav-btn{
+    background-color: rgb(36, 36, 129);
+    color: aliceblue;
+    font-size:0.9rem;
+    margin-left:0rem;
+    margin-right:0rem;
+  }
+
+      th {
+        background-color: #eee;
+        text-align: left;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      h3 {
+        text-align: center;
+        margin: 30px 0;
+      }
+    </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Timetable Manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item" >
+              <a  class="nav-link btn" id="nav-btn" href="/">Home</a>
+            </li>&nbsp;&nbsp;
+            <li class="nav-item">
+              <a class="nav-link btn" id="nav-btn" href="/login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div style="font-size: 1rem;text-align: center;display: inline-block;">
+        <h6><b><i>Date:</i></b><%= date %></h6> 
+    </div>
+    <div style="font-size: 1rem;text-align: center;display: inline-block;float: right;">
+       <h6><b><i>Time:</i></b><%= time %></h6>  
+    </div>
+    <h3>Today's Timetable</h3>
+    <div style="font-size: 1rem;text-align: center;">
+        <h6> <b><i> Day:</i></b><%= day %> </h6>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Faculty Id</th>
+          <th>Faculty</th>
+          <th>8:40 - 9:30</th>
+          <th>9:30 - 10:20</th>
+          <th>10:20 - 11:10</th>
+          <th>11:10 - 12:00</th>
+          <th>12:50 - 1:40</th>
+          <th>1:40 - 2:30</th>
+          <th>2:30 - 3:20</th>
+          <th>3:20 - 4:10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i< l1 ;i++){
+            %>
+            <tr>
+                <td><%= data1[i].id %></td>
+                <td><%= data1[i].name %></td>
+                <% for(var k=1;k< 9;k++){
+                    var g=0;
+                    for( var p=0;p< l2;p++){ 
+                    if(data1[i].name==data2[p].faculty && data2[p].period==k ){
+                        g=1;
+                        %>
+                            <td><%= data2[p].year%>/4 - <%= data2[p].subject%></td>
+                        
+                    <% break;}
+                    }
+                    if(g==0){
+                        %>
+                        <td>-</td>
+                        <%
+                    }
+                } %>
+            </tr>
+        <% } %> 
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+
+  <style>
+    #main{
+      background-color: lightgray;
+      width:30rem;
+      margin-top: 1rem;
+      padding: 2rem;
+      border-radius: 0.7rem;
+    }
+    #form-details{
+      margin-top: 2rem;
+    }
+  </style>
+
+  <body>
+    <div class="container" id="main">
+      <h5 align="center">Admin Login</h5>
+      <div id="form-details"> 
+        
+      <form id="signup-form" action="/adminlogin" method="post">
+
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div style="text-align:center;"> 
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+        <br>
+       
+      </form>
+    
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper-base.min.js"
+            integrity="sha384-rJlklvTlT+DW2l1zrHrFOq49r4giO+zEyQJ1mXkF3Gs62Z/tAe+wNOJ7Vj+R1Cjr"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  </body>
+</html>
